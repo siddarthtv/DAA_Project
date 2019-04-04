@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!-- saved from url=(0077)https://medium.com/media/9ad8bddbbfade888e83ef65b9313c064?postId=3ac44857fee8 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Sudoku Grid Setup – Medium</title><meta name="description" content="Sudoku Grid Setup"><meta name="twitter:widgets:csp" content="on"><meta name="robots" content="noindex"><!--<base target="_blank">--><base href="." target="_blank"><style>body {text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: "ff-tisa-web-pro", Georgia, Cambria, "Times New Roman", Times, serif; font-weight: 400; color: #333332; font-size: 18px; line-height: 1.4; margin: 0; background-color: white; overflow: hidden;}iframe {max-width: 100%;}</style></head><body><style>.gist .gist-file { margin-bottom: 0 !important; }.gist { text-rendering: auto; }</style><script src="./24e32426ab144685191818d3e1e31289.js" charset="utf-8"></script><link rel="stylesheet" href="./gist-embed-a9a1cf2ca01efd362bfa52312712ae94.css"><div id="gist84720836" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-sudoku_setup-cpp" class="file">
+    
+
+  <div itemprop="text" class="Box-body px-0 blob-wrapper data type-c ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-sudoku_setup-cpp-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-sudoku_setup-cpp-LC1" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">define</span> <span class="pl-en">DIM</span> <span class="pl-c1">9</span></td>
+      </tr>
+      <tr>
+        <td id="file-sudoku_setup-cpp-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-sudoku_setup-cpp-LC2" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">define</span> <span class="pl-en">BLANK</span> <span class="pl-c1">0</span></td>
+      </tr>
+      <tr>
+        <td id="file-sudoku_setup-cpp-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-sudoku_setup-cpp-LC3" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">define</span> <span class="pl-en">SPACE</span> <span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-sudoku_setup-cpp-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-sudoku_setup-cpp-LC4" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">define</span> <span class="pl-en">LINE</span> <span class="pl-s"><span class="pl-pds">"</span>|<span class="pl-pds">"</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-sudoku_setup-cpp-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-sudoku_setup-cpp-LC5" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">define</span> <span class="pl-en">NEW_ROW</span> <span class="pl-s"><span class="pl-pds">"</span>-------------------------------------<span class="pl-pds">"</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-sudoku_setup-cpp-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-sudoku_setup-cpp-LC6" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">define</span> <span class="pl-en">GRID_FULL</span> <span class="pl-en">std::make_pair</span>(<span class="pl-c1">9</span>, <span class="pl-c1">9</span>)</td>
+      </tr>
+      <tr>
+        <td id="file-sudoku_setup-cpp-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-sudoku_setup-cpp-LC7" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-sudoku_setup-cpp-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-sudoku_setup-cpp-LC8" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">//</span> Prints the Soduko grid</span></td>
+      </tr>
+      <tr>
+        <td id="file-sudoku_setup-cpp-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-sudoku_setup-cpp-LC9" class="blob-code blob-code-inner js-file-line">void print_grid(<span class="pl-k">int</span> grid[DIM][DIM])</td>
+      </tr>
+      <tr>
+        <td id="file-sudoku_setup-cpp-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-sudoku_setup-cpp-LC10" class="blob-code blob-code-inner js-file-line">{</td>
+      </tr>
+      <tr>
+        <td id="file-sudoku_setup-cpp-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-sudoku_setup-cpp-LC11" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">for</span> (<span class="pl-k">int</span> i = <span class="pl-c1">0</span>; i &lt; DIM; i++)</td>
+      </tr>
+      <tr>
+        <td id="file-sudoku_setup-cpp-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-sudoku_setup-cpp-LC12" class="blob-code blob-code-inner js-file-line">	{</td>
+      </tr>
+      <tr>
+        <td id="file-sudoku_setup-cpp-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-sudoku_setup-cpp-LC13" class="blob-code blob-code-inner js-file-line">		cout &lt;&lt; SPACE &lt;&lt; SPACE &lt;&lt; SPACE &lt;&lt; SPACE &lt;&lt; endl;</td>
+      </tr>
+      <tr>
+        <td id="file-sudoku_setup-cpp-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-sudoku_setup-cpp-LC14" class="blob-code blob-code-inner js-file-line">		cout &lt;&lt; NEW_ROW &lt;&lt; endl;</td>
+      </tr>
+      <tr>
+        <td id="file-sudoku_setup-cpp-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-sudoku_setup-cpp-LC15" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">for</span> (<span class="pl-k">int</span> j = <span class="pl-c1">0</span>; j &lt; DIM; j++)</td>
+      </tr>
+      <tr>
+        <td id="file-sudoku_setup-cpp-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-sudoku_setup-cpp-LC16" class="blob-code blob-code-inner js-file-line">		{</td>
+      </tr>
+      <tr>
+        <td id="file-sudoku_setup-cpp-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-sudoku_setup-cpp-LC17" class="blob-code blob-code-inner js-file-line">			cout &lt;&lt; SPACE;</td>
+      </tr>
+      <tr>
+        <td id="file-sudoku_setup-cpp-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-sudoku_setup-cpp-LC18" class="blob-code blob-code-inner js-file-line">			<span class="pl-k">if</span> (BLANK == grid[i][j])</td>
+      </tr>
+      <tr>
+        <td id="file-sudoku_setup-cpp-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-sudoku_setup-cpp-LC19" class="blob-code blob-code-inner js-file-line">			{</td>
+      </tr>
+      <tr>
+        <td id="file-sudoku_setup-cpp-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-sudoku_setup-cpp-LC20" class="blob-code blob-code-inner js-file-line">				cout &lt;&lt; SPACE;</td>
+      </tr>
+      <tr>
+        <td id="file-sudoku_setup-cpp-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-sudoku_setup-cpp-LC21" class="blob-code blob-code-inner js-file-line">			}</td>
+      </tr>
+      <tr>
+        <td id="file-sudoku_setup-cpp-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-sudoku_setup-cpp-LC22" class="blob-code blob-code-inner js-file-line">			<span class="pl-k">else</span></td>
+      </tr>
+      <tr>
+        <td id="file-sudoku_setup-cpp-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-sudoku_setup-cpp-LC23" class="blob-code blob-code-inner js-file-line">			{</td>
+      </tr>
+      <tr>
+        <td id="file-sudoku_setup-cpp-L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="file-sudoku_setup-cpp-LC24" class="blob-code blob-code-inner js-file-line">				cout &lt;&lt; grid[i][j];</td>
+      </tr>
+      <tr>
+        <td id="file-sudoku_setup-cpp-L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="file-sudoku_setup-cpp-LC25" class="blob-code blob-code-inner js-file-line">			}</td>
+      </tr>
+      <tr>
+        <td id="file-sudoku_setup-cpp-L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="file-sudoku_setup-cpp-LC26" class="blob-code blob-code-inner js-file-line">			cout &lt;&lt; SPACE;</td>
+      </tr>
+      <tr>
+        <td id="file-sudoku_setup-cpp-L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td id="file-sudoku_setup-cpp-LC27" class="blob-code blob-code-inner js-file-line">			cout &lt;&lt; LINE;</td>
+      </tr>
+      <tr>
+        <td id="file-sudoku_setup-cpp-L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td id="file-sudoku_setup-cpp-LC28" class="blob-code blob-code-inner js-file-line">		}</td>
+      </tr>
+      <tr>
+        <td id="file-sudoku_setup-cpp-L29" class="blob-num js-line-number" data-line-number="29"></td>
+        <td id="file-sudoku_setup-cpp-LC29" class="blob-code blob-code-inner js-file-line">	}</td>
+      </tr>
+      <tr>
+        <td id="file-sudoku_setup-cpp-L30" class="blob-num js-line-number" data-line-number="30"></td>
+        <td id="file-sudoku_setup-cpp-LC30" class="blob-code blob-code-inner js-file-line">	cout &lt;&lt; endl &lt;&lt; NEW_ROW &lt;&lt; endl &lt;&lt; endl;;</td>
+      </tr>
+      <tr>
+        <td id="file-sudoku_setup-cpp-L31" class="blob-num js-line-number" data-line-number="31"></td>
+        <td id="file-sudoku_setup-cpp-LC31" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/GeorgeSeif/24e32426ab144685191818d3e1e31289/raw/7dd48fd5d8d5c6e220cf896302934eb2652e7e92/sudoku_setup.cpp" style="float:right">view raw</a>
+        <a href="https://gist.github.com/GeorgeSeif/24e32426ab144685191818d3e1e31289#file-sudoku_setup-cpp">sudoku_setup.cpp</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<script>var height = -1; var delayMs = 200;function notifyResize(height) {height = height ? height : document.documentElement.offsetHeight; var resized = false; if (window.donkey && donkey.resize) {donkey.resize(height); resized = true;}if (parent && parent._resizeIframe) {var obj = {iframe: window.frameElement, height: height}; parent._resizeIframe(obj); resized = true;}if (window.location && window.location.hash === "#amp=1" && window.parent && window.parent.postMessage) {window.parent.postMessage({sentinel: "amp", type: "embed-size", height: height}, "*");}if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.resize) {window.webkit.messageHandlers.resize.postMessage(height); resized = true;}return resized;}function maybeResize() {if (document.documentElement.offsetHeight != height && notifyResize()) {height = document.documentElement.offsetHeight;}delayMs = Math.min(delayMs * 2, 1000000); setTimeout(maybeResize, delayMs);}maybeResize();</script></body></html>
