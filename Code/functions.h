@@ -1,13 +1,26 @@
-int **createGrid(int n);
-void printGrid(int **Grid, int n);
-int checkRow(int **Grid, int n, int r, int x);
-int checkColumn(int **Grid, int n, int c, int x);
-int checkBox(int **Grid, int n, int r, int c, int x);
-void fillDiagonal(int **Grid, int n);
-int findnextUnfilled(int **Grid, int n, int *i, int *j);
-int fillRemaining(int **Grid, int n);
-void createPuzzle(int **Grid, int n);
-void removeVertices(int **Grid, int n);
+typedef struct grid {
+	int **matrix;
+	int size;
+} Sudoku;
+
+typedef struct {
+	int row;
+	int col;
+} Position;
+
+
+Sudoku *createGrid(int n);
+void printPuzzle(Sudoku *Puzzle);
+int checkRow(Sudoku *Puzzle, int r, int x);
+int checkColumn(Sudoku *Puzzle, int c, int x);
+int checkBox(Sudoku *Puzzle, int r, int c, int x);
+void fillDiagonal(Sudoku *Puzzle);
+Position *findnextUnfilled(Sudoku *Puzzle);
+int fillRemaining(Sudoku *Puzzle);
+void removeVertices(Sudoku *Puzzle, int parameter);
+Sudoku *copyPuzzle(Sudoku *Puzzle);
+Sudoku *getCompletePuzzle(int n);
+Sudoku *getIncompletePuzzle(Sudoku *CompletePuzzle);
 
 /*
 Naive Solution:

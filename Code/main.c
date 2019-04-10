@@ -5,6 +5,5 @@
 
 int main()
 {
-	int **grid = createGrid(SIZE);
-	createPuzzle(grid, SIZE);
+	Sudoku *Puzzle = getCompletePuzzle(SIZE);
 }
