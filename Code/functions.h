@@ -21,7 +21,7 @@ void removeVertices(Sudoku *Puzzle, int parameter);
 Sudoku *copyPuzzle(Sudoku *Puzzle);
 Sudoku *getCompletePuzzle(int n);
 Sudoku *getIncompletePuzzle(Sudoku *CompletePuzzle);
-
+void writePuzzle(Sudoku *Puzzle, char *path);
 /*
 Naive Solution:
 1) Randomly take any number 1-9
