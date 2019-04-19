@@ -221,6 +221,7 @@ Sudoku* copyPuzzle(Sudoku *Puzzle)
 			Copy->matrix[i][j] = Puzzle->matrix[i][j];
 		}
 	}
+	return Copy;
 }
 
 Sudoku *getCompletePuzzle(int n)
@@ -228,12 +229,28 @@ Sudoku *getCompletePuzzle(int n)
 	Sudoku *Puzzle = createGrid(n);
 	fillDiagonal(Puzzle);
 	fillRemaining(Puzzle);
-	printPuzzle(Puzzle);
+	//printPuzzle(Puzzle);
+	return Puzzle;
 }
 
 Sudoku *getIncompletePuzzle(Sudoku *CompletePuzzle)
 {
 	Sudoku *IncompletePuzzle = copyPuzzle(CompletePuzzle);
 	removeVertices(IncompletePuzzle, 30);
-	printPuzzle(IncompletePuzzle);
+	//printPuzzle(IncompletePuzzle);
+	return IncompletePuzzle;
+}
+
+void writePuzzle(Sudoku *Puzzle, char *path)
+{
+	FILE *fp = fopen(path, "w");
+	int i,j;
+	int n = Puzzle->size;
+	for(i=0; i<n; i++)
+	{
+		for(j=0; j<n; j++)
+			fprintf(fp, "%d", Puzzle->matrix[i][j]);
+		fprintf(fp, "\n");
+	}
+	fclose(fp);
 }

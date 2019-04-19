@@ -1,0 +1,11 @@
+#entry {
+	color:black;
+	cursor: pointer;
+	background-color: white;
+	transition: 0.1s;
+}
+
+#entry:hover {
+	color:green;
+	background-color: rgb(237, 214, 64);
+}
