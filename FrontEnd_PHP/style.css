@@ -1,0 +1,31 @@
+.entry {
+	color:black;
+	cursor: pointer;
+	background-color: white;
+	transition: 0.1s;
+}
+
+.entry:hover {
+	color:green;
+	background-color: rgb(237, 214, 64);
+}
+.choice_table
+{
+	margin-left: 40%;
+	margin-top: -40%;
+}
+.choice_table tr td
+{
+	padding:1vw;
+	font-size: 1.5vw;
+	border: 1px solid black;
+	color:black;
+	cursor: pointer;
+	background-color: white;
+	transition: 0.1s;
+}
+.choice_table tr td:hover
+{
+	color:green;
+	background-color: rgb(237, 214, 64);
+}
